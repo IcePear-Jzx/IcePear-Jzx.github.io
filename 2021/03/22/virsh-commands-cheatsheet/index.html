@@ -12,7 +12,7 @@
 
 
 
-<title>Hello World | Zhexin&#39;s Blog</title>
+<title>Virsh Commands Cheatsheet | Zhexin&#39;s Blog</title>
 
 
 
@@ -169,7 +169,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">Hello World</h1>
+            <h1 class="post-title">Virsh Commands Cheatsheet</h1>
             
                 <div class="post-meta">
                     
@@ -178,7 +178,7 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">March 9, 2021&nbsp;&nbsp;2:11:57</a>
+                        Date: <a href="#">March 22, 2021&nbsp;&nbsp;12:51:52</a>
                         </span>
                     
                     
@@ -187,20 +187,27 @@
         </header>
 
         <div class="post-content">
-            <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+            <h2 id="Display-Node-Information"><a href="#Display-Node-Information" class="headerlink" title="Display Node Information"></a>Display Node Information</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo virsh nodeinfo</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo virsh dominfo &lt;domain&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h2 id="List-Active-Domains"><a href="#List-Active-Domains" class="headerlink" title="List Active Domains"></a>List Active Domains</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo virsh list</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<h2 id="List-All-Domains"><a href="#List-All-Domains" class="headerlink" title="List All Domains"></a>List All Domains</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo virsh list --all</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<h2 id="Start-VM"><a href="#Start-VM" class="headerlink" title="Start VM"></a>Start VM</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo virsh start &lt;domain&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h2 id="Autostart-VM"><a href="#Autostart-VM" class="headerlink" title="Autostart VM"></a>Autostart VM</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo virsh autostart &lt;domain&gt;</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo virsh autostart --<span class="built_in">disable</span> &lt;domain&gt;</span></span><br></pre></td></tr></table></figure>
 
+<h2 id="Shutdown-VM"><a href="#Shutdown-VM" class="headerlink" title="Shutdown VM"></a>Shutdown VM</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo virsh shutdown &lt;domain&gt;</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo virsh destroy &lt;domain&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Reboot-VM"><a href="#Reboot-VM" class="headerlink" title="Reboot VM"></a>Reboot VM</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo virsh reboot &lt;domain&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Remove-VM"><a href="#Remove-VM" class="headerlink" title="Remove VM"></a>Remove VM</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo virsh destroy &lt;domain&gt; 2&gt; /dev/null</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo virsh undefine &lt;domain&gt;</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo virsh pool-refresh default</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo virsh vol-delete --pool default &lt;domain&gt;.qcow2</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Connect-to-VM-Console"><a href="#Connect-to-VM-Console" class="headerlink" title="Connect to VM Console"></a>Connect to VM Console</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo virsh console &lt;domain&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Suspend-and-Resume-VM"><a href="#Suspend-and-Resume-VM" class="headerlink" title="Suspend and Resume VM"></a>Suspend and Resume VM</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo virsh <span class="built_in">suspend</span> &lt;domain&gt;</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo virsh resume &lt;domain&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Clone-VM"><a href="#Clone-VM" class="headerlink" title="Clone VM"></a>Clone VM</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo virt-clone --connect qemu:///system \</span></span><br><span class="line"><span class="bash">--original &lt;old-domain&gt; \</span></span><br><span class="line"><span class="bash">--name &lt;new-domain&gt; \</span></span><br><span class="line"><span class="bash">--file /var/lib/libvirt/images/&lt;new-domain&gt;.qcow2</span> </span><br></pre></td></tr></table></figure>
         </div>
 
         
@@ -242,8 +249,8 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2021/03/20/performance-optimization-of-virtual-machine-migration-for-memory-deduplication/">Performance Optimization of Virtual Machine Migration for Memory Deduplication</a>
             
+            <a class="next" rel="next" href="/2021/03/20/performance-optimization-of-virtual-machine-migration-for-memory-deduplication/">Performance Optimization of Virtual Machine Migration for Memory Deduplication</a>
             
         </section>
 
